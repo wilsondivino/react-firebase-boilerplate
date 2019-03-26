@@ -4,7 +4,9 @@
 
 Esse projeto está sendo criado com base nesse artigo: https://www.robinwieruch.de/complete-firebase-authentication-react-tutorial/.
 
-### Para a utllização do projeto crie o arquivo .env na raiz do projeto com a seguinte estrutura, substituindo o conteúdo das aspas pelo valor do projeto no firebase:
+## Arquivo .env
+
+Para a utllização do projeto crie o arquivo .env na raiz do projeto com a seguinte estrutura, substituindo o conteúdo das aspas pelo valor do projeto no firebase:
 
 ```
 REACT_APP_API_KEY= "..."

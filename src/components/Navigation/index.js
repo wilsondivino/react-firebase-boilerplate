@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import SignOutButton from '../SignOut';
 import * as ROUTES from '../../constants/routes';
 import { AuthUserContext } from '../Session';
+import styles from './Menu.module.css';
 
 const Navigation = () => (
     <AuthUserContext.Consumer>
@@ -15,17 +16,17 @@ const Navigation = () => (
 
 const NavigationAuth = () => (
     <div>
-        <ul>
-            <li>
+        <ul className={styles.Menu}>
+            <li className={styles.Menu_item}>
                 <Link to={ROUTES.LANDING}>Landing</Link>
             </li>
-            <li>
+            <li className={styles.Menu_item}>
                 <Link to={ROUTES.HOME}>Home</Link>
             </li>
-            <li>
+            <li className={styles.Menu_item}>
                 <Link to={ROUTES.ACCOUNT}>Account</Link>
             </li>
-            <li>
+            <li className={styles.Menu_item}>
                 <SignOutButton />
             </li>
         </ul>
@@ -34,11 +35,11 @@ const NavigationAuth = () => (
 
 const NavigationNonAuth = () => (
     <div>
-        <ul>
-            <li>
+        <ul className={styles.Menu}>
+            <li className={styles.Menu_item}>
                 <Link to={ROUTES.LANDING}>Landing</Link>
             </li>
-            <li>
+            <li className={styles.Menu_item}>
                 <Link to={ROUTES.SIGN_IN}>Sign In</Link>
             </li>
         </ul>

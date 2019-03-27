@@ -1,7 +1,6 @@
 import React from 'react';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 
-import { withFirebase } from '../Firebase';
 import { withAuthentication } from '../Session';
 import Navigation from '../Navigation';
 
@@ -15,10 +14,25 @@ import AdminPage from '../Admin';
 
 import * as ROUTES from '../../constants/routes';
 
+const styles = {
+    Logo: {
+        fontSize: '1.5em'
+    },
+    Container: {
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'space-between',
+        padding: '0 40px'
+    }
+}
+
 const App = () => (
     <Router>
         <div>
-            <Navigation />
+            <div style={styles.Container}>
+                <h1 style={styles.Logo}>Admin</h1>
+                <Navigation />
+            </div>
 
             <hr />
 

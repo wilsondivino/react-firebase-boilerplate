@@ -1,7 +1,16 @@
 import React from 'react';
 
+const styles = {
+    Container: {
+      display: "flex",
+      justifyContent: "center",
+      alignItems: "center",
+      flexDirection: "column"
+    }
+}
+
 const Home = () => (
-    <div>
+    <div style={styles.Container}>
         <h1>Home</h1>
     </div>
 );

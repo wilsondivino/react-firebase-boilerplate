@@ -5,8 +5,28 @@ import { compose } from 'recompose';
 import { withFirebase } from '../Firebase';
 import * as ROUTES from '../../constants/routes';
 
+const styles = {
+  Container: {
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+    flexDirection: "column"
+  },
+  Input: {
+    height: "30px",
+    margin: "10px 0px",
+    width: "100%",
+    paddingLeft: "5px",
+    fontSize: "12px"
+  },
+  Button: {
+    width: "100%",
+    height: "30px"
+  }
+}
+
 const SignUpPage = () => (
-  <div>
+  <div style={styles.Container}>
     <h1>SignUp</h1>
     <SignUpForm />
   </div>
@@ -68,39 +88,48 @@ class SignUpFormBase extends Component {
       username === '';
 
     return (
-      <form onSubmit={this.onSubmit}>
-        <input
-          name="username"
-          value={username}
-          onChange={this.onChange}
-          type="text"
-          placeholder="Full Name"
-        />
-        <input
-          name="email"
-          value={email}
-          onChange={this.onChange}
-          type="text"
-          placeholder="Email Address"
-        />
-        <input
-          name="passwordOne"
-          value={passwordOne}
-          onChange={this.onChange}
-          type="password"
-          placeholder="Password"
-        />
-        <input
-          name="passwordTwo"
-          value={passwordTwo}
-          onChange={this.onChange}
-          type="password"
-          placeholder="Confirm Password"
-        />
-        <button disabled={isInvalid} type="submit">Sign Up</button>
-
+      <div>
         {error && <p>{error.message}</p>}
-      </form>
+
+        <form onSubmit={this.onSubmit}>
+          <input
+            name="username"
+            value={username}
+            onChange={this.onChange}
+            style={styles.Input}
+            type="text"
+            placeholder="Full Name"
+          />
+          <input
+            name="email"
+            value={email}
+            onChange={this.onChange}
+            style={styles.Input}
+            type="text"
+            placeholder="Email Address"
+          />
+          <input
+            name="passwordOne"
+            value={passwordOne}
+            onChange={this.onChange}
+            style={styles.Input}
+            type="password"
+            placeholder="Password"
+          />
+          <input
+            name="passwordTwo"
+            value={passwordTwo}
+            onChange={this.onChange}
+            style={styles.Input}
+            type="password"
+            placeholder="Confirm Password"
+          />
+          <button
+            disabled={isInvalid}
+            style={styles.Button}
+            type="submit">Sign Up</button>
+        </form>
+      </div>
     );
   }
 }

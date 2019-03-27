@@ -1,0 +1,9 @@
+.Menu {
+    list-style-type: none;
+    padding: 0;
+}
+
+.Menu_item {
+    display: inline-block;
+    margin: 0 10px;
+}
